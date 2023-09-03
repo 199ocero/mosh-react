@@ -1,6 +1,6 @@
-import ListGroup from "./components/ListGroup";
-import { Alert } from "./components/Alert";
-import { Button } from "./components/Button";
+import ListGroup from "./components/ListGroup/ListGroup";
+import { Alert } from "./components/Alert/Alert";
+import { Button } from "./components/Button/Button";
 import { useState } from "react";
 function App() {
   let items = ["Italy", "France", "United Kingdom", "Netherlands"];

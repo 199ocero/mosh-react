@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import styles from "./Alert.module.css";
 
 interface AlertProps {
   children: ReactNode;
@@ -19,14 +20,16 @@ export const Alert = ({
   return (
     <>
       <div
-        className={`flex items-center p-4 mb-4 rounded-lg alert-${alertType}`}
+        className={`flex items-center p-4 mb-4 rounded-lg ${
+          styles["alert-" + alertType]
+        }`}
       >
         {children}
         {dismissible && (
           <button
             onClick={() => setDismissed(true)}
             type="button"
-            className={`ml-auto alert-${alertType}-close`}
+            className={`ml-auto ${styles["alert-" + alertType + "-close"]}`}
           >
             <svg
               className="w-3 h-3"
