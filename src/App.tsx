@@ -5,12 +5,17 @@ function App() {
 
   return (
     <>
-      <div className="space-y-5">
+      <div className="space-y-5 px-5">
         <div>
           <ListGroup items={items} heading="Countries" />
         </div>
         <div>
-          <Alert />
+          <Alert>
+            This is an alert with a{" "}
+            <a className="underline" href="#">
+              link.
+            </a>
+          </Alert>
         </div>
       </div>
     </>
