@@ -10,11 +10,10 @@ function App() {
           <ListGroup items={items} heading="Countries" />
         </div>
         <div>
-          <Alert>
-            This is an alert with a{" "}
-            <a className="underline" href="#">
-              link.
-            </a>
+          <Alert alertType="info">
+            <span>
+              Info alert! Change a few things up and try submitting again.
+            </span>
           </Alert>
         </div>
       </div>

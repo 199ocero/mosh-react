@@ -2,11 +2,12 @@ import { ReactNode } from "react";
 
 interface AlertProps {
   children: ReactNode;
+  alertType?: "info" | "danger" | "success" | "warning" | "dark";
 }
-export const Alert = ({ children }: AlertProps) => {
+export const Alert = ({ children, alertType }: AlertProps) => {
   return (
-    <div className="flex items-center p-4 mb-4 text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400">
-      <div className="text-sm font-medium">{children}</div>
+    <div className={"items-center p-4 mb-4 rounded-lg alert-" + alertType}>
+      {children}
     </div>
   );
 };
