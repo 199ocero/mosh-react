@@ -1,12 +1,14 @@
 import { useState } from "react";
-
-function ListGroup() {
-  let items = ["Italy", "France", "United Kingdom", "Netherlands"];
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+}
+function ListGroup({ items, heading }: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
     <>
       <h1 className="text-3xl my-2 font-bold text-gray-700 dark:text-white">
-        List Group
+        {heading}
       </h1>
       {items.length === 0 && (
         <p className="dark:text-white text-gray-700">No items found.</p>
