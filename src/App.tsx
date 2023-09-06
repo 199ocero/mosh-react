@@ -1,6 +1,7 @@
 import ListGroup from "./components/ListGroup/ListGroup";
 import { Alert } from "./components/Alert/Alert";
 import { Button } from "./components/Button/Button";
+import { Like } from "./components/Like/Like";
 import { useState } from "react";
 function App() {
   let items = ["Italy", "France", "United Kingdom", "Netherlands"];
@@ -13,9 +14,8 @@ function App() {
   return (
     <>
       <div className="px-5 space-y-5">
-        <div>
-          <ListGroup items={items} heading="Countries" />
-        </div>
+        <ListGroup items={items} heading="Countries" />
+        <Like size={30} likeType="success" />
         <Button buttonType="info" onClick={handleShowAlert}>
           {showAlert ? "Hide Alert" : "Show Alert"}
         </Button>

@@ -1,0 +1,21 @@
+.like {
+    @apply text-gray-800 dark:text-white;
+}
+.likeInfo{
+    @apply text-blue-500 dark:text-blue-400;
+}
+.likeDanger{
+    @apply text-red-500 dark:text-red-400;
+}
+
+.likeSuccess{
+    @apply text-green-500 dark:text-green-400;
+}
+
+.likeWarning{
+    @apply text-yellow-500 dark:text-yellow-400;
+}
+
+.likeDark{
+    @apply text-gray-500 dark:text-gray-400;
+}
