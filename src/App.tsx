@@ -2,6 +2,7 @@ import ListGroup from "./components/ListGroup/ListGroup";
 import { Alert } from "./components/Alert/Alert";
 import { Button } from "./components/Button/Button";
 import { Like } from "./components/Like/Like";
+import { ExpandableText } from "./ExpandableText";
 import { useState } from "react";
 function App() {
   let items = ["Italy", "France", "United Kingdom", "Netherlands"];
@@ -94,6 +95,19 @@ function App() {
             Add Quantity
           </Button>
         </div>
+        <ExpandableText maxChars={250}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+          obcaecati! Maxime rem consequuntur eius quam sit commodi reiciendis
+          nobis quasi quos. Enim sequi hic dicta iure itaque recusandae
+          repudiandae quas suscipit accusantium quidem ea debitis earum quo
+          provident sed facere doloremque culpa illum ratione, obcaecati, iusto
+          explicabo quibusdam incidunt? Explicabo nisi accusamus vel beatae non
+          voluptatum, quam quae deleniti corrupti id a quaerat pariatur aliquam
+          quasi temporibus nostrum eaque corporis officia facilis aperiam
+          tempore ipsa! Delectus, repellat ad voluptas sed odit nulla omnis quo
+          voluptate! Sit accusantium amet non sunt fugiat possimus libero,
+          perferendis, et nam pariatur dolor voluptates doloribus.
+        </ExpandableText>
       </div>
     </>
   );
