@@ -2,7 +2,7 @@ import ListGroup from "./components/ListGroup/ListGroup";
 import { Alert } from "./components/Alert/Alert";
 import { Button } from "./components/Button/Button";
 import { Like } from "./components/Like/Like";
-import { ExpandableText } from "./ExpandableText";
+import { ExpandableText } from "./components/ExpandableText";
 import { useState } from "react";
 function App() {
   let items = ["Italy", "France", "United Kingdom", "Netherlands"];

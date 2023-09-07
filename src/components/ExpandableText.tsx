@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "./components/Button/Button";
+import { Button } from "./Button/Button";
 interface ExpandableTextProps {
   children: string;
   maxChars?: number;
