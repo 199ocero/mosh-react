@@ -3,6 +3,7 @@ import { Alert } from "./components/Alert/Alert";
 import { Button } from "./components/Button/Button";
 import { Like } from "./components/Like/Like";
 import { ExpandableText } from "./components/ExpandableText";
+import { Form } from "./components/Form";
 import { useState } from "react";
 function App() {
   let items = ["Italy", "France", "United Kingdom", "Netherlands"];
@@ -56,7 +57,8 @@ function App() {
 
   return (
     <>
-      <div className="px-5 space-y-5">
+      <div className="px-5 my-20 space-y-5">
+        <Form />
         <ListGroup items={items} heading="Countries" />
         <Like size={30} likeType="success" />
         <Button buttonType="info" onClick={handleShowAlert}>
