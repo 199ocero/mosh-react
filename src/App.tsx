@@ -4,7 +4,11 @@ import { Button } from "./components/Button/Button";
 import { Like } from "./components/Like/Like";
 import { ExpandableText } from "./components/ExpandableText";
 import { Form } from "./components/Form";
+import { ExpenseList } from "./expense-tracker/components/ExpenseList";
+import { ExpenseFilter } from "./expense-tracker/components/ExpenseFilter";
+import { ExpenseForm } from "./expense-tracker/components/ExpenseForm";
 import { useState } from "react";
+
 function App() {
   let items = ["Italy", "France", "United Kingdom", "Netherlands"];
   const [showAlert, setShowAlert] = useState(false);
@@ -54,10 +58,50 @@ function App() {
       }),
     });
   };
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [expenses, setExpenses] = useState([
+    {
+      id: 1,
+      description: "Car",
+      amount: 50,
+      category: "Utilities",
+    },
+    {
+      id: 2,
+      description: "Bread",
+      amount: 10,
+      category: "Groceries",
+    },
+    {
+      id: 3,
+      description: "Eggs",
+      amount: 3,
+      category: "Groceries",
+    },
+  ]);
 
+  const handleSelectedCategory = (category: string) => {
+    setSelectedCategory(category);
+  };
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((item) => item.category === selectedCategory)
+    : expenses;
+  const handleDelete = (id: number) => {
+    setExpenses(expenses.filter((item) => item.id !== id));
+  };
+  const handleAddCategory = (expense: any) => {
+    setExpenses([...expenses, { ...expense, id: expenses.length + 1 }]);
+  };
   return (
     <>
-      <div className="px-5 my-20 space-y-5">
+      <div className="px-5 my-10 space-y-5">
+        <ExpenseForm onSubmit={(expense) => handleAddCategory(expense)} />
+        <ExpenseFilter
+          onSelectedCategory={(category) => handleSelectedCategory(category)}
+        />
+        <ExpenseList expenses={visibleExpenses} onDelete={handleDelete} />
+      </div>
+      {/* <div className="px-5 my-20 space-y-5">
         <Form />
         <ListGroup items={items} heading="Countries" />
         <Like size={30} likeType="success" />
@@ -110,7 +154,7 @@ function App() {
           voluptate! Sit accusantium amet non sunt fugiat possimus libero,
           perferendis, et nam pariatur dolor voluptates doloribus.
         </ExpandableText>
-      </div>
+      </div> */}
     </>
   );
 }
